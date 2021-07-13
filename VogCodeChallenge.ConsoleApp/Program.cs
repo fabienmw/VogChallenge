@@ -6,7 +6,12 @@ namespace VogCodeChallenge.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Iterate through a collection with no For or Foreach loop");
+            QuestionClass.IterateWithoutForLoops();
+
+            Console.WriteLine("TESTModule testing..");
+            var result = QuestionClass.TESTModule("test");
+            Console.WriteLine(result);
         }
     }
 }
