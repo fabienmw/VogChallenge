@@ -13,7 +13,7 @@ namespace VogCodeChallenge.AWSLambda
 {
     public class Function
     {
-        public void FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
+        public void ManageDynamoDBHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
         {
             context.Logger.LogLine($"Beginning to process {dynamoEvent.Records.Count} records...");
 
