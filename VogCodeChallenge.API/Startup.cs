@@ -24,7 +24,7 @@ namespace VogCodeChallenge.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IDbProvider, InMemoryDataProvider>();
+            services.AddScoped<IDbProvider, SQLDbProvider>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddControllers();
