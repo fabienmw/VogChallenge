@@ -7,6 +7,6 @@
         public string LastName { get; set; }
         public string JobTitle { get; set; }
         public string Address { get; set; }
-        public Department Department { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

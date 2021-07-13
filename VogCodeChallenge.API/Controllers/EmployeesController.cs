@@ -25,7 +25,7 @@ namespace VogCodeChallenge.API.Controllers
         [HttpGet("Employees/department/{departmentId}")]
         public IActionResult RetrieveEmployeesByDepartment([FromRoute] int departmentId)
         {
-            var result = _employeeService.ListAll();
+            var result = _employeeService.RetrieveEmployeesByDepartment(departmentId);
             return Ok(result);
         }
     }
