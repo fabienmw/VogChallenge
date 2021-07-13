@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 using VogCodeChallenge.API.Services;
 
 namespace VogCodeChallenge.API.Controllers
 {
     [Route("api/")]
     [ApiController]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Application.Json)]
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
@@ -18,16 +16,17 @@ namespace VogCodeChallenge.API.Controllers
             _employeeService = employeeService;
         }
         [HttpGet("Employees")]
-        public async Task<IActionResult> RetrieveAllEmployees()
+        public IActionResult RetrieveAllEmployees()
         {
             var result = _employeeService.GetAll();
             return Ok(result);
         }
 
         [HttpGet("Employees/department/{departmentId}")]
-        public async Task<IActionResult> RetrieveEmployeesByDepartment([FromRoute] int departmentId)
+        public IActionResult RetrieveEmployeesByDepartment([FromRoute] int departmentId)
         {
-            return Ok();
+            var result = _employeeService.ListAll();
+            return Ok(result);
         }
     }
 }
