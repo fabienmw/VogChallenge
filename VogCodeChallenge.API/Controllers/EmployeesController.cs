@@ -15,10 +15,12 @@ namespace VogCodeChallenge.API.Controllers
         {
             _employeeService = employeeService;
         }
+
         [HttpGet("Employees")]
         public IActionResult RetrieveAllEmployees()
         {
             var result = _employeeService.GetAll();
+
             return Ok(result);
         }
 
@@ -26,6 +28,11 @@ namespace VogCodeChallenge.API.Controllers
         public IActionResult RetrieveEmployeesByDepartment([FromRoute] int departmentId)
         {
             var result = _employeeService.RetrieveEmployeesByDepartment(departmentId);
+            if (result is null)
+            {
+                return NotFound($"The department: {departmentId}, has no employees.");
+            }
+
             return Ok(result);
         }
     }

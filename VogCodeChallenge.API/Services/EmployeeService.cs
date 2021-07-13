@@ -16,13 +16,16 @@ namespace VogCodeChallenge.API.Services
 
         public IEnumerable<Employee> GetAll()
         {
-            //Suggestion: Introduce a DTO or ViewModel and map only the fields that should be exposed rather than returning the result as is which expose the table or document structure
+            //SUGGESTION: Introduce a DTO or ViewModel and map only the fields that should be exposed rather than
+            //returning the result as is which expose the table or document structure.
 
             return _dbProvider.GetEmployees();
         }
 
         public IList<Employee> ListAll()
         {
+            //NOTE: the document did not specify clearly the expectations on this method. I went with the assumption that it should return all employees
+
             return _dbProvider.ListAll();
         }
 

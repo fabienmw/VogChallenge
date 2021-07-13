@@ -14,7 +14,7 @@ namespace VogCodeChallenge.API.DataLayer
 
         public IList<Employee> ListAll()
         {
-            throw new NotImplementedException();
+            return EmployeeTestData();
         }
 
         private List<Employee> EmployeeTestData()
