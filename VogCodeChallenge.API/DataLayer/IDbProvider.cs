@@ -10,6 +10,5 @@ namespace VogCodeChallenge.API.DataLayer
     {
         IEnumerable<Employee> GetEmployees();
         IList<Employee> ListAll();
-        IEnumerable<Employee> GetEmployeesByDepartment(int deparmentId);
     }
 }

@@ -4,5 +4,17 @@
         <name>VogCodeChallenge.API</name>
     </assembly>
     <members>
+        <member name="M:VogCodeChallenge.API.Services.EmployeeService.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VogCodeChallenge.API.Services.EmployeeService.ListAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

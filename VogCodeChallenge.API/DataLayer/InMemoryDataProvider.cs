@@ -12,18 +12,9 @@ namespace VogCodeChallenge.API.DataLayer
             return EmployeeTestData();
         }
 
-        public IEnumerable<Employee> GetEmployeesByDepartment(int deparmentId)
-        {
-            var employees = EmployeeTestData();
-
-            var employeesByDepartment = employees.Where(e => e.Department.Id == deparmentId);
-
-            return employeesByDepartment;
-        }
-
         public IList<Employee> ListAll()
         {
-            throw new NotImplementedException();
+            return EmployeeTestData();
         }
 
         private List<Employee> EmployeeTestData()
@@ -37,6 +28,7 @@ namespace VogCodeChallenge.API.DataLayer
                     FirstName = "John",
                     LastName = "Doe",
                     JobTitle = "Software Developer",
+                    DepartmentId = 2
                 },
                 new Employee
                 {
@@ -44,7 +36,8 @@ namespace VogCodeChallenge.API.DataLayer
                     Address = "",
                     FirstName = "Jane",
                     LastName = "Doe",
-                    JobTitle = "UI/UX Manager"
+                    JobTitle = "UI/UX Manager",
+                    DepartmentId = 2
                 },
                 new Employee
                 {
@@ -52,7 +45,8 @@ namespace VogCodeChallenge.API.DataLayer
                     Address = "",
                     FirstName = "John",
                     LastName = "Smith",
-                    JobTitle = "Scrum Master"
+                    JobTitle = "Scrum Master",
+                    DepartmentId = 1
                 }
             };
         }
