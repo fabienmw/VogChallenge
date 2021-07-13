@@ -11,5 +11,10 @@ namespace VogCodeChallenge.API.Entities
         public string Name { get; set; }
         public string Address { get; set; }
         IEnumerable<Employee> Employees { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
